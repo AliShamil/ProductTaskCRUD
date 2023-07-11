@@ -1,0 +1,35 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+        .card:hover img {
+            opacity: 0.8; /* Reduce image opacity on hover */
+        }
+
+    .card.fade-in {
+        opacity: 1; /* Set full opacity after the fade-in animation */
+    }

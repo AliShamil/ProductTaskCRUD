@@ -1,0 +1,14 @@
+﻿<form class="d-flex" id="GFG" asp-controller="Product" asp-action="GetProduct" onsubmit="return checkInput()">
+    <input name="SearchProp" type="search" class="form-control me-2" placeholder="Product name,category or ID">
+    <div class="dropdown">
+        <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Search
+        </a>
+
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="setAction('Category')">Category</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setAction('Id')">Id</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setAction('Name')">Name</a></li>
+        </ul>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+﻿@model List<Product>
+@{
+    if (Model.Count == 0)
+    {
+        <h2 class="text-center text-info">Product is not found !</h2>
+    }
+
+
+    for (int i = 0; i < Model.Count; i++)
+    {
+        <div class="card bg-secondary text-white m-3" style="width: 16rem;">
+            <img style="width: 230px; height: 175px; object-fit: contain" src="@Url.Content( Model[i].ImageLink == null ? "~/image/imageError.png" : Model[i].ImageLink)" class="card-img-top" alt="..." />
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-secondary text-white">Product Id: @Model[i].Id</li>
+                <li class="list-group-item bg-secondary text-white">Name: @Model[i].Name</li>
+                <li class="list-group-item bg-secondary text-white">Category: @Model[i].Category</li>
+                <li class="list-group-item bg-secondary text-white">Price: @Model[i].Price $</li>
+                <li class="list-group-item bg-secondary text-white">Count: @Model[i].Count</li>
+                <li class="list-group-item bg-secondary text-white">Description: @Model[i].Description</li>
+                <li class="list-group-item bg-secondary text-white">Date of Addition: @Model[i].dateOfAddition</li>
+            </ul>
+            <a class="btn btn-primary my-1" asp-controller="Product" asp-action="SearchProduct">Close</a>
+        </div>
+    }
+
+}
