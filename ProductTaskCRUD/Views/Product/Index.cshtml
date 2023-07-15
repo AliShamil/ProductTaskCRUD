@@ -7,19 +7,30 @@
 
     for (int i = 0; i < Model.Count; i++)
     {
-        <div class="card m-3 bg-secondary text-white" style="width: 16rem;">
-            <img style="width: 230px; height: 175px; object-fit: contain" src="@Url.Content( Model[i].ImageLink == null ? "~/img/noimg.jpg" : Model[i].ImageLink)" class="card-img-top" alt="..." />
-            <ul class="list-group list-group-flush bg-secondary">
-                <li class="list-group-item bg-secondary text-white">Product Id: @Model[i].Id</li>
-                <li class="list-group-item bg-secondary text-white">Name: @Model[i].Name</li>
-                <li class="list-group-item bg-secondary text-white">Category: @Model[i].Category</li>
-                <li class="list-group-item bg-secondary text-white">Price: @Model[i].Price $</li>
-                <li class="list-group-item bg-secondary text-white">Count: @Model[i].Count</li>
-                <li class="list-group-item bg-secondary text-white">Description: @Model[i].Description</li>
-                <li class="list-group-item bg-secondary text-white">Date of Addition: @Model[i].dateOfAddition</li>
-            </ul>
-            <a class="btn btn-primary my-1" href="@Url.Action("DeleteProduct", "Product", new { id = Model[i].Id })">Delete</a>
+        <div class="card m-3 bg-secondary text-white" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img style="width: 230px; height: 100%; object-fit: contain" src="@Url.Content( Model[i].ImageURl == null ? "~/image/imageError.png" : Model[i].ImageURl)" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-secondary text-white">Product Id: @Model[i].Id</li>
+                            <li class="list-group-item bg-secondary text-white">Name: @Model[i].Name</li>
+                            <li class="list-group-item bg-secondary text-white">Category: @Model[i].Category</li>
+                            <li class="list-group-item bg-secondary text-white">Price: @Model[i].Price $</li>
+                            <li class="list-group-item bg-secondary text-white">Count: @Model[i].Count</li>
+                            <li class="list-group-item bg-secondary text-white text-truncate">Description: @Model[i].Description</li>
+                            <li class="list-group-item bg-secondary text-white">Last Update: @Model[i].dateOfAddition</li>
+                            <li class="list-group-item bg-secondary text-white">
+                                <a class="btn btn-primary m-auto" style="width:45%" href="@Url.Action("Show","Product", Model[i])">Show</a>
+                                <a class="btn btn-primary m-auto" style="width:45%" href="@Url.Action("AddProduct","Product", new { Model[i].Id })">Edit</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-
+    
     }
 }

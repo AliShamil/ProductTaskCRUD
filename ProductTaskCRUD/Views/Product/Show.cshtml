@@ -1,0 +1,21 @@
+﻿@model Product
+<div class="container mt-5">
+    <div class="row fs-3">
+        <div class="col-md-6">
+            <img src="@Model.ImageURl" alt="@Model.Name" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h1>@Model.Name</h1>
+            <div class="card p-3 mb-3">
+                <p class="card-text"><i>"@Model.Description"</i></p>
+            </div>
+            <p class="fw-bold">ID: @Model.Id</p>
+            <p class="fw-bold">Category: @Model.Category</p>
+            <p class="fw-bold">Price: @Model.Price $</p>
+            <p class="fw-bold">Count: @Model.Count</p>
+            <p class="fw-bold">Last Update: @Model.dateOfAddition</p>
+            <a class="btn btn-primary w-50" href="@Url.Action("AddProduct","Product", new { Model.Id })">Edit</a>
+        </div>
+    </div>
+</div>
+

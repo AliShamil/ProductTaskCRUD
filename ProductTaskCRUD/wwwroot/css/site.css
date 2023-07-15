@@ -16,6 +16,10 @@ html {
 body {
     margin-bottom: 60px;
 }
+body, html {
+    font-family: "Inconsolata", sans-serif;
+}
+
 
 
 .card {
